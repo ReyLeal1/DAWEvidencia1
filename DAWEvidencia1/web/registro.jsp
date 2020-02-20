@@ -46,7 +46,7 @@ hr {
 }
 
 .registerbtn {
-  background-color: #0099ff;
+  background-color: #cccc00;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
