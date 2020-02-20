@@ -4,6 +4,9 @@
     Author     : DAVID
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="Java.Libro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,42 +35,22 @@
         <main class="cuerpo">
             <div class="container">
                 <h1>Catalogo</h1>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
-                <p>idsaijdsidisajdiasdjasijdaijsidasjidijasdjiajdijasdjajidjiasakfkdgksmgkmgkfmgkdmgkdfgkmd
-                    kmgdmkgdfgmkkmgmkdfmgdfkgmkdfmgdmfkgmkdfmkgdmfkgmkdkmgdfkmgk
-                    fdmkgdkmgmk</p>
+                
+                <%
+                    if(getServletContext().getAttribute("libros") != null) {
+                        List<Libro> libros =
+                                (List<Libro>) getServletContext().getAttribute("libros");
+                        
+                        for(Libro libro : libros) {
+                            out.print("<h2>");
+                            out.print(libro.getNombreLibro());
+                            out.print("</h2>");
+                            out.print(libro.getDescripcion());
+                            out.print("<br>");
+                            out.print("<br>");
+                        }
+                    }
+                %>
             </div>
         </main>
         <footer class="footer">

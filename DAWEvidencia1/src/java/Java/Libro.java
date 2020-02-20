@@ -5,13 +5,20 @@
  */
 package Java;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  *
  * @author reyleal
  */
 public class Libro {
+    @SerializedName("title")
     private String nombreLibro;
+    
+    @SerializedName("shortDescription")
     private String descripcion;
+    
+    @SerializedName("longDescription")
     private String sinopsis;
 
     public Libro(String nombreLibro, String descripcion, String sinopsis) {

@@ -8,6 +8,10 @@
         <servlet-name>iniciarsesion</servlet-name>
         <servlet-class>Servlets.iniciarsesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CatalogoServlet</servlet-name>
+        <servlet-class>Servlets.CatalogoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro.do</url-pattern>
@@ -16,6 +20,16 @@
         <servlet-name>iniciarsesion</servlet-name>
         <url-pattern>/iniciarsesion.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogoServlet</servlet-name>
+        <url-pattern>/CatalogoServlet</url-pattern>
+    </servlet-mapping>
+    
+    <listener>
+        <listener-class>
+                 Servlets.CatalogoServlet
+        </listener-class>
+    </listener>
     <session-config>
         <session-timeout>
             30
