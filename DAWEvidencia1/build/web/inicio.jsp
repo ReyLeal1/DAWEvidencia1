@@ -35,22 +35,23 @@
         <main class="cuerpo">
             <div class="container">
                 <h1>Catalogo</h1>
-                
+                <form method="POST" action="Detalle.do">
                 <%
                     if(getServletContext().getAttribute("libros") != null) {
                         List<Libro> libros =
                                 (List<Libro>) getServletContext().getAttribute("libros");
                         
                         for(Libro libro : libros) {
-                            out.print("<h2>");
-                            out.print(libro.getNombreLibro());
-                            out.print("</h2>");
-                            out.print(libro.getDescripcion());
-                            out.print("<br>");
-                            out.print("<br>");
+                            out.print(String.format("<button type='submit'"
+                                    + "name='nombre' value='%s'>",
+                                    libro.getNombreLibro()));
+                            out.print(String.format("<img src='%s'"
+                                    + " class='thumbnail'>", libro.getImagenUrl()));
+                            out.print("</button>");
                         }
                     }
                 %>
+                </form>
             </div>
         </main>
         <footer class="footer">

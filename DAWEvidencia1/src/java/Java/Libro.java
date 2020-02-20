@@ -14,17 +14,18 @@ import com.google.gson.annotations.SerializedName;
 public class Libro {
     @SerializedName("title")
     private String nombreLibro;
-    
     @SerializedName("shortDescription")
     private String descripcion;
-    
     @SerializedName("longDescription")
     private String sinopsis;
+    @SerializedName("thumbnailUrl")
+    private String imagenUrl;
 
-    public Libro(String nombreLibro, String descripcion, String sinopsis) {
+    public Libro(String nombreLibro, String descripcion, String sinopsis, String imagenUrl) {
         this.nombreLibro = nombreLibro;
         this.descripcion = descripcion;
         this.sinopsis = sinopsis;
+        this.imagenUrl = imagenUrl;
     }
 
     public Libro() {
@@ -53,7 +54,13 @@ public class Libro {
     public void setSinopsis(String sinopsis) {
         this.sinopsis = sinopsis;
     }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
     
-    
-    
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
+    }
+
 }
