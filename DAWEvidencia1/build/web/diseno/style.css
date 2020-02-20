@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/02/2020, 05:52:10 PM
+    Author     : DAVID
+*/
+
+body{
+    font-family: georgia, times, serif;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.3em;
+    margin: 0;
+}
+
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+
+p{
+    margin-bottom: 1.6em;
+}
+
+.container{
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.header{
+    background: #cccc00;
+    color: white;
+    padding: 0.5rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;  
+}
+
+.header a{
+    color:white;
+    text-decoration: none;
+}
+
+.cuerpo{ 
+    padding-top: 6rem;
+}
+
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+    display: inline-block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover{
+    background: #4a4a4a;
+}
+
+
+.footer{
+    background: #f2f2f2;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.thumbnail {
+    width: 150px;
+    height: 180px;
+    margin: 10px;
+}
+
+.aceptar {
+
+
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+    
+    float: right;
+
+}
+
+.aceptar:hover {
+  background-color: #46a24a;
+}

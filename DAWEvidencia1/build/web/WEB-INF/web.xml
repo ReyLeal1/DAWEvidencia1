@@ -8,6 +8,14 @@
         <servlet-name>iniciarsesion</servlet-name>
         <servlet-class>Servlets.iniciarsesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CatalogoServlet</servlet-name>
+        <servlet-class>Servlets.CatalogoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetalleServlet</servlet-name>
+        <servlet-class>Servlets.DetalleServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro.do</url-pattern>
@@ -15,6 +23,15 @@
     <servlet-mapping>
         <servlet-name>iniciarsesion</servlet-name>
         <url-pattern>/iniciarsesion.do</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>
+                 Java.LibrosServletContextListener
+        </listener-class>
+    </listener>
+    <servlet-mapping>
+        <servlet-name>DetalleServlet</servlet-name>
+        <url-pattern>/Detalle.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

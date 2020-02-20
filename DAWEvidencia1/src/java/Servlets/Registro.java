@@ -1,17 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Servlets;
 
 import Java.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class Registro extends HttpServlet {
@@ -42,19 +41,18 @@ public class Registro extends HttpServlet {
             processRequest(request, response);
     }
 
-  
+    public ArrayList<Usuario> usuarios = new ArrayList<>();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
         String nombreUsuario = request.getParameter("nombreusuario");
-        String contraseña = request.getParameter("contrasena");
+        String contrasena = request.getParameter("contrasena");
         String nombre = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String direccion = request.getParameter("direccion");
         String telefono = request.getParameter("celular");
-        
-        Usuario us = new Usuario();
+
         
 
     }
