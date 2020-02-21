@@ -36,6 +36,22 @@
         <servlet-name>DetalleServlet</servlet-name>
         <url-pattern>/Detalle.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Carrito</servlet-name>
+        <servlet-class>Servlets.Carrito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Carrito</servlet-name>
+        <url-pattern>/Carrito.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Cobro</servlet-name>
+        <servlet-class>Servlets.Cobro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cobro</servlet-name>
+        <url-pattern>/Cobro.do</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
