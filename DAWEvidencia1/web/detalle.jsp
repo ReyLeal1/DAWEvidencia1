@@ -4,6 +4,7 @@
     Author     : Brandon
 --%>
 
+<%@page import="Java.Usuario"%>
 <%@page import="Java.Libro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -21,7 +22,12 @@
             <div class="container logo-nav-container">
                 <a href="#" class="logo"><img src="images/logo.png" height="80" width="80" /></a>
                 <%
-                    
+                    if(session.getAttribute("user") != null){
+                             Usuario usuario = (Usuario) session.getAttribute("user");
+                        
+                        out.print(String.format("<h4>Bienvenido: %s", usuario.getNombre()));
+                        out.print("</h4>");
+                        }
                  %>
                 <nav class="navigation">
                     <ul>
