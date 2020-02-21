@@ -46,7 +46,7 @@ hr {
 }
 
 .loginbtn {
-  background-color: #0099ff;
+  background-color: #cccc00;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -54,6 +54,13 @@ hr {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+}
+
+.footer{
+    background: #f2f2f2;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 0;
 }
 
 .loginbtn:hover {
@@ -78,8 +85,14 @@ hr {
     <label for="password"><b>Contraseña</b></label>
     <input type="password" placeholder="Ingrese una contraseña" name="logincontrasena" required>
 
-    <button type="submit" class="loginbtn">Registro</button>
+    <button type="submit" class="loginbtn">Iniciar Sesión</button>
   </div>
    </form>
+        <footer class="footer">
+            <div class="container">
+                <p>Página del Rey</p>
+                <a href="inicio.jsp">Regresar a inicio</a>
+            </div>
+        </footer>
     </body>
 </html>
