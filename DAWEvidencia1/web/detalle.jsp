@@ -34,7 +34,7 @@
                     <li><a href="inicio.jsp">Inicio</a></li>
                     <li><a href="registro.jsp">Registro</a></li>
                     <li><a href="iniciarSesion.jsp">Inicio Sesión</a></li>
-                    <li><a href="#">Carrito de Compra</a></li>
+                    <li><a href="Carrito.jsp">Carrito de Compra</a></li>
                     </ul>
                 </nav>
             </div>
@@ -50,11 +50,13 @@
         
         
             <p><b>Sinopsis:</b> <%= libro.getSinopsis() %></p>
+            <form method="post" action="Detalle.do">
+                <input type="submit" class='aceptar'
+                        name='comprar' value='Comprar'>
+            </form>
             
-            <button class='aceptar'>Comprar</button>
         </div>
-        
-        <div></div>
+       
         </main>
         
         <footer class="footer">
