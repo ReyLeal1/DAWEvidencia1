@@ -85,6 +85,8 @@ public class iniciarsesion extends HttpServlet {
         for(Usuario l : usuarios) {
             if(l.getNombreUsuario().equals(usuario) && l.getContrasena().equals(contrasena)) {
                 user = l;
+            }else{
+                 request.getRequestDispatcher("iniciarSesion.jsp").forward(request, response);
             }
         }
         
@@ -98,7 +100,7 @@ public class iniciarsesion extends HttpServlet {
         }
         } catch (Exception e) {
              pw.print(e);
-            request.getRequestDispatcher("iniciarSesion.jsp").forward(request, response);
+
            
         }
        
