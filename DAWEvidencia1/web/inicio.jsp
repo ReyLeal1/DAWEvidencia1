@@ -28,8 +28,8 @@
                         if(session.getAttribute("user") != null){
                              Usuario usuario = (Usuario) session.getAttribute("user");
                         
-                        out.print(String.format("<p>Bienvenido: %s", usuario.getNombre()));
-                        out.print("</p>");
+                        out.print(String.format("<h4>Bienvenido: %s", usuario.getNombre()));
+                        out.print("</h4>");
                         }
                        
                         
