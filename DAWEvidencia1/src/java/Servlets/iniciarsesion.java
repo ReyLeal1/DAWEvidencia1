@@ -9,6 +9,10 @@ import Java.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -68,7 +72,37 @@ public class iniciarsesion extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
         
-
+        String usuario = request.getParameter("loginusuario");
+        String contrasena = request.getParameter("logincontrasena");
+        
+        HttpSession session = request.getSession();
+        
+        List<Usuario> usuarios = (List) session.getAttribute("usuarios");
+        
+        try {
+             Usuario user = null;
+        
+        for(Usuario l : usuarios) {
+            if(l.getNombreUsuario().equals(usuario) && l.getContrasena().equals(contrasena)) {
+                user = l;
+            }
+        }
+        
+        
+        if(user != null) {
+            session.setAttribute("user", user);
+            // Redirect to index
+            RequestDispatcher view =
+                    request.getRequestDispatcher("inicio.jsp");
+            view.forward(request, response);
+        }
+        } catch (Exception e) {
+             pw.print(e);
+            request.getRequestDispatcher("iniciarSesion.jsp").forward(request, response);
+           
+        }
+       
+       
     }
 
     /**
