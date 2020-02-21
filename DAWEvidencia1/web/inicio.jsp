@@ -4,6 +4,7 @@
     Author     : DAVID
 --%>
 
+<%@page import="Java.Usuario"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="Java.Libro"%>
@@ -18,10 +19,24 @@
     <body>
         <header class="header">
             <div class="container logo-nav-container">
-                <a href="#" class="logo"><img src="images/logo.png" height="80" width="80" /></a>
+                <a href="#" class="logo"><img src="images/logo.png" height="80" width="80" /></a>               
+                
+                
                 <%
-                    
-                 %>
+                    if(session.getAttribute("usuarios") != null){
+                        request.getRequestDispatcher("inicio.jsp");
+                        if(session.getAttribute("user") != null){
+                             Usuario usuario = (Usuario) session.getAttribute("user");
+                        
+                        out.print(String.format("<p>Bienvenido: %s", usuario.getNombre()));
+                        out.print("</p>");
+                        }
+                       
+                        
+                    }
+
+                %>
+                                
                 <nav class="navigation">
                     <ul>
                     <li><a href="inicio.jsp">Inicio</a></li>
