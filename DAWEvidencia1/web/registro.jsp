@@ -85,6 +85,9 @@ a {
     <label for="password"><b>Contraseña</b></label>
     <input type="password" placeholder="Ingrese una contraseña" name="contrasena" required>
     
+    <label for="validatepassword"><b>Confirme la Contraseña</b></label>
+    <input type="password" placeholder="Confirme la contraseña" name="valcontrasena" required>
+    
     <label for="name"><b>Nombre</b></label>
     <input type="text" placeholder="Ingrese su nombre" name="nombre" required>
     
