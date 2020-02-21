@@ -19,12 +19,14 @@
     <body>
         <header class="header">
             <div class="container logo-nav-container">
-                <a href="#" class="logo"><img src="images/logo.png" height="80" width="80" /></a>               
+                <a href="#" class="logo"><img src="images/logo.png" height="80px" width="80px" /></a>               
                 
                 
                 <%
-                    if(session.getAttribute("usuarios") != null){
-                        request.getRequestDispatcher("inicio.jsp");
+                    if(session.getAttribute("usuarios") == null){
+                        request.getRequestDispatcher("registro.jsp").forward(request, response);
+                    }
+                    else{
                         if(session.getAttribute("user") != null){
                              Usuario usuario = (Usuario) session.getAttribute("user");
                         
